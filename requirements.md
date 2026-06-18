@@ -1,4 +1,4 @@
-Create and use at least two pieces of custom middleware.
+- DONE Create and use at least two pieces of custom middleware.
 
 Create and use error-handling middleware.
 
