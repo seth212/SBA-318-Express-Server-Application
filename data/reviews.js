@@ -4,3 +4,5 @@ const reviews = [{
   rating: 5,
   comment: "Great car!"
 }]
+
+export default reviews
