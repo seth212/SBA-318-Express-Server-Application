@@ -27,7 +27,7 @@ If you are stuck on how to approach this, think about ways you could render the 
 Use simple CSS to style the rendered views.
 Note: This is not a test of design; it is a test of serving static files using Express. The CSS can be very simple.
 
-Include a form within a rendered view that allows for interaction with your RESTful API.
+- DONE Include a form within a rendered view that allows for interaction with your RESTful API.
 
 Utilize reasonable code organization practices.
 

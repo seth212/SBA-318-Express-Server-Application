@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
 
 router.get('/', (req, res) => {
   let filteredCars = cars;
-
+//using query parameter
   if (req.query.make) {
     filteredCars = filteredCars.filter(
       car => car.make.toLowerCase() === req.query.make.toLowerCase()
@@ -28,6 +28,25 @@ router.get('/', (req, res) => {
   }
 
   res.json(filteredCars);
+});
+
+router.patch("/:id", (req, res) => {
+  const car = cars.find(
+    (car) => car.id == req.params.id
+  );
+
+  if (!car) {
+    return res.status(404).json({
+      error: "Car not found"
+    });
+  }
+
+  for (const key in req.body) {
+    car[key] = req.body[key];
+  }
+
+  res.json(car);
+  console.log(cars)
 });
 
 
