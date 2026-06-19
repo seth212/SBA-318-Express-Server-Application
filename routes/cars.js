@@ -49,6 +49,22 @@ router.patch("/:id", (req, res) => {
   console.log(cars)
 });
 
+router.delete("/:id", (req, res) => {
+  const index = cars.findIndex(
+    (car) => car.id == req.params.id
+  );
+
+  if (index !== -1) {
+    const deletedCar = cars.splice(index, 1)
+    res.json(deletedCar[0])
+    console.log(cars)
+  } else {
+    return res.status(404).json({
+      error: "Car not found"
+    })
+  }
+});
+
 
 
 export default router
