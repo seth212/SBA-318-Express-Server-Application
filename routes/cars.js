@@ -18,6 +18,17 @@ router.get('/:id', (req, res) => {
     }
 });
 
+router.get('/', (req, res) => {
+  let filteredCars = cars;
+
+  if (req.query.make) {
+    filteredCars = filteredCars.filter(
+      car => car.make.toLowerCase() === req.query.make.toLowerCase()
+    );
+  }
+
+  res.json(filteredCars);
+});
 
 
 

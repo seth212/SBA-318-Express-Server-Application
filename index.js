@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import ejs from 'ejs';
 import carsRoute from './routes/cars.js';
+import carsData from './data/cars.js'
 
 const app = express();
 const port = 3000;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'))
 app.use('/api/cars', carsRoute);
+
 
 
 // app.use((err, req, res, next) =>{
@@ -40,8 +42,8 @@ app.post('/submit', (req, res) => {
     dealerId: Number(req.body["car-dealer-id"])
   };
 
-  cars.push(newCar);
-  console.log(cars)
+  carsData.push(newCar);
+  console.log(carsData)
   res.send("Success");
 });
 

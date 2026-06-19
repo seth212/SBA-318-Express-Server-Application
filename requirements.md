@@ -8,7 +8,7 @@ Utilize reasonable data structuring practices.
 
 Create GET routes for all data that should be exposed to the client.
 
-Create POST routes for data, as appropriate. At least one data category should allow for client creation via a POST request.
+- DONE Create POST routes for data, as appropriate. At least one data category should allow for client creation via a POST request.
 
 Create PATCH or PUT routes for data, as appropriate. At least one data category should allow for client manipulation via a PATCH or PUT request.
 
