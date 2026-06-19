@@ -3,9 +3,18 @@ const router = express.Router();
 
 import cars from '../data/cars.js'
 
+
 router.get('/', (req, res) => {
-    res.json(cars)
-})
+    console.log(req.query)
+  let filteredCars = cars;
+  if (req.query.make) {
+    filteredCars = filteredCars.filter(
+      car => car.make.toLowerCase() === req.query.make.toLowerCase()
+    );
+  }
+
+  res.json(filteredCars);
+});
 
 // allows users to search cars by ID
 router.get('/:id', (req, res) => {
@@ -18,17 +27,6 @@ router.get('/:id', (req, res) => {
     }
 });
 
-router.get('/', (req, res) => {
-  let filteredCars = cars;
-//using query parameter
-  if (req.query.make) {
-    filteredCars = filteredCars.filter(
-      car => car.make.toLowerCase() === req.query.make.toLowerCase()
-    );
-  }
-
-  res.json(filteredCars);
-});
 
 router.patch("/:id", (req, res) => {
   const car = cars.find(

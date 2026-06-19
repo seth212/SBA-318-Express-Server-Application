@@ -6,18 +6,18 @@ Use at least three different data categories (e.g., users, posts, or comments).
 
 Utilize reasonable data structuring practices.
 
-Create GET routes for all data that should be exposed to the client.
+- DONE Create GET routes for all data that should be exposed to the client.
 
 - DONE Create POST routes for data, as appropriate. At least one data category should allow for client creation via a POST request.
 
 - DONE Create PATCH or PUT routes for data, as appropriate. At least one data category should allow for client manipulation via a PATCH or PUT request.
 
-Create DELETE routes for data, as appropriate. At least one data category should allow for client deletion via a DELETE request.
+- DONE Create DELETE routes for data, as appropriate. At least one data category should allow for client deletion via a DELETE request.
 
 - DONE Include query parameters for data filtering, where appropriate. At least one data category should allow for additional filtering through the use of query parameters.
 Note: DO NOT use API keys; this makes it more difficult for instructors to grade finished projects efficiently.
 
-Utilize route parameters, where appropriate.
+- DONE Utilize route parameters, where appropriate.
 
 Adhere to the guiding principles of REST.
 
@@ -29,7 +29,7 @@ Note: This is not a test of design; it is a test of serving static files using E
 
 - DONE Include a form within a rendered view that allows for interaction with your RESTful API.
 
-Utilize reasonable code organization practices.
+- DONE Utilize reasonable code organization practices.
 
 Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
 

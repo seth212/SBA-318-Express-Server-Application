@@ -9,8 +9,8 @@ const cars = [
   },
   {
     id: 2,
-    make: "Toyota",
-    model: "Avalon",
+    make: "Ford",
+    model: "Mustang",
     year: 2007,
     price: 5500,
     dealerId: 2,
