@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import ejs from 'ejs';
 import carsRoute from './routes/cars.js';
 import carsData from './data/cars.js'
+import dealersData from './data/dealers.js';
+import dealersRoute from './routes/dealers.js'
 
 const app = express();
 const port = 3000;
@@ -13,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'))
 app.use('/api/cars', carsRoute);
+app.use('/api/dealers', dealersRoute);
 
 
 
