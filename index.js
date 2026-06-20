@@ -12,20 +12,27 @@ const port = 3000;
 
 app.set('view engine', 'ejs')
 
+function validateCar(req, res, next) {
+  const { make, model } = req.body;
+  if (!make || !model) {
+    return res.status(400).send("Missing data");
+  }
+  next();
+}
+
+function logger(req, res, next) {
+  console.log(`${req.method} ${req.url}`);
+  next();
+}
+
+app.use(logger)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('dev'))
+app.use(express.static('public'))
 app.use('/api/cars', carsRoute);
 app.use('/api/dealers', dealersRoute);
-app.use('/api/reviews', reviewsRoute )
+app.use('/api/reviews', reviewsRoute );
 
-
-
-// app.use((err, req, res, next) =>{
-//     console.log(err);
-//     res.status(500);
-//     res.send("Something went wrong")
-// })
 
 app.get('/', (req, res) =>{
     res.render('home.ejs')
@@ -35,7 +42,7 @@ app.get('/cars', (req, res) =>{
     res.render('cars.ejs')
 })
 
-app.post('/submit', (req, res) => {
+app.post('/submit', validateCar, (req, res) => {
   console.log("REQ.BODY:", req.body);
 
   const newCar = {
@@ -52,6 +59,14 @@ app.post('/submit', (req, res) => {
   res.send("Success");
 });
 
+
+app.use((err, req, res, next) =>{
+    console.log(err);
+    res.status(500);
+    res.send("Something went wrong")
+})
+
 app.listen(port, () =>{
     console.log('Server is running on port:', port)
 })
+

@@ -3,7 +3,6 @@ const router = express.Router();
 
 import cars from '../data/cars.js'
 
-
 router.get('/', (req, res) => {
     console.log(req.query)
   let filteredCars = cars;

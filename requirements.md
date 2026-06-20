@@ -2,9 +2,9 @@
 
 - DONE Create and use error-handling middleware.
 
-Use at least three different data categories (e.g., users, posts, or comments).
+- DONE Use at least three different data categories (e.g., users, posts, or comments).
 
-Utilize reasonable data structuring practices.
+- DONE Utilize reasonable data structuring practices.
 
 - DONE Create GET routes for all data that should be exposed to the client.
 
