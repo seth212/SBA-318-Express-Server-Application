@@ -1,3 +1,10 @@
 body {
     background-color: burlywood;
 }
+
+.car-card {
+  background: wheat;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
