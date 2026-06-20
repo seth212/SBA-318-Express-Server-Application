@@ -7,10 +7,26 @@
     <title>Cars</title>
 </head>
 <body>
+    <button>
+        <a href="/">Home Page</a>
+    </button>
 
     <h1>Welcome to the Cars Page! </h1>
 
-    <h2>Add and submit your car in the form below</h2>
+    <p>Browse the affordable cars below</p>
+
+  <div class="car-grid">
+  <% cars.forEach(car => { %>
+    <div class="car-card">
+      <h2><%= car.year %> <%= car.make %> <%= car.model %></h2>
+      <p>Price: $<%= car.price %></p>
+      <p>Dealer ID: <%= car.dealerId %></p>
+      <button>Add to Cart</button> <button>Buy</button>
+    </div>
+  <% }) %>
+</div>
+
+    <h2>List your car for sale!</h2>
     <div id="form">
     <form action="/submit" method="POST"> 
         <label for="id">ID</label>

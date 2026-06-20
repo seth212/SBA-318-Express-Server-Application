@@ -13,10 +13,13 @@ const port = 3000;
 app.set('view engine', 'ejs')
 
 function validateCar(req, res, next) {
-  const { make, model } = req.body;
+  const make = req.body["car-make"];
+  const model = req.body["car-model"];
+
   if (!make || !model) {
     return res.status(400).send("Missing data");
   }
+
   next();
 }
 
@@ -39,7 +42,7 @@ app.get('/', (req, res) =>{
 })
 
 app.get('/cars', (req, res) =>{
-    res.render('cars.ejs')
+    res.render("cars.ejs", { cars: carsData });
 })
 
 app.post('/submit', validateCar, (req, res) => {
@@ -56,7 +59,9 @@ app.post('/submit', validateCar, (req, res) => {
 
   carsData.push(newCar);
   console.log(carsData)
-  res.send("Success");
+ res.render("cars.ejs", {
+    cars: carsData
+  });
 });
 
 
