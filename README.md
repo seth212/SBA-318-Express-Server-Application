@@ -23,10 +23,15 @@ FEATURES:
 ROUTES: 
 
 GET | '/api/cars' | Get all cars 
+
 GET | '/api/cars/:id' | Get one car by ID 
-GET | '/api/cars?make=ford' | Filter cars by make 
+
+GET | '/api/cars?make=ford' | Filter cars by make
+
 POST | '/api/cars' | Create a new car |
+
 PATCH | '/api/cars/:id' | Update a car 
+
 DELETE | '/api/cars/:id' | Delete a car 
 
 
